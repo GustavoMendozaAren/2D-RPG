@@ -520,6 +520,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0500673f63d4fc74bb3ae0e6f81c7666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerIdle: Idle
+  layerCaminar: Caminar
 --- !u!114 &655028695
 MonoBehaviour:
   m_ObjectHideFlags: 0
