@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Personaje
+    uniqueID: 328372391
+    locked: 0
+  - name: TileMapPiso
+    uniqueID: 503166773
+    locked: 0
+  - name: Arboles
+    uniqueID: 3628096515
+    locked: 0
+  - name: Props
+    uniqueID: 526268875
+    locked: 0
