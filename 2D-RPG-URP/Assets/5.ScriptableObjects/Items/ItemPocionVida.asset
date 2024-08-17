@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a0e7440b6a025f4b9dd62d55496a8e1, type: 3}
+  m_Name: ItemPocionVida
+  m_EditorClassIdentifier: 
+  ID: PocionVida
+  Nombre: Pocion de vida
+  Icono: {fileID: 21300000, guid: 76e165e000d338c4c804e4d42b7ef903, type: 3}
+  Descripcion: Pocion que restaura 10 pts de salud
+  Tipo: 1
+  EsConsumible: 1
+  EsAcumulable: 1
+  AcumulacionMax: 10
+  Cantidad: 0
+  HpRestauracion: 10

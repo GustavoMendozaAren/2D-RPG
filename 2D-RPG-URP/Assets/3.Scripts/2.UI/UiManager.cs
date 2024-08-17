@@ -14,6 +14,7 @@ public class UiManager : Sinlgeton<UiManager>
 
     [Header("Paneles")]
     [SerializeField] private GameObject panelStats;
+    [SerializeField] private GameObject panelInventario;
 
     [Header("BARRA")]
     [SerializeField] private Image vidaPlayer;
@@ -104,4 +105,18 @@ public class UiManager : Sinlgeton<UiManager>
         expActual = pExpActual;
         expRequeridaNewLevel = pExpRequerida;
     }
+
+    #region Paneles
+
+    public void AbrirCerrarPanelStats() 
+    {
+        panelStats.SetActive(!panelStats.activeSelf);
+    }
+
+    public void AbrirCerrarPanelInventario() 
+    {
+        panelInventario.SetActive(!panelInventario.activeSelf);
+    }
+
+    #endregion
 }
