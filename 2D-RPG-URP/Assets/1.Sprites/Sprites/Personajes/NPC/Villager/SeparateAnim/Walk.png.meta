@@ -177,85 +177,337 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Caminar_Derecha_1
+      name: Walk_0
       rect:
         serializedVersion: 2
-        x: 48
+        x: 1
         y: 48
-        width: 16
-        height: 16
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 320c9fd05685de4b0800000000000000
-      internalID: -5409570386352685021
+      spriteID: 6ddb89f7214537d48b20c4cb0d322315
+      internalID: -1019931580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Derecha_2
+      name: Walk_1
       rect:
         serializedVersion: 2
-        x: 48
+        x: 17
+        y: 48
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59271e6ff383924c8a81a0fed82090b
+      internalID: 642068258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 48
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de14051863900e45b5522bb8c4118f2
+      internalID: 181906116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaminarD1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 48
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad50d1314f1b9e04b8f4103caa4e53b3
+      internalID: 1150530251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_4
+      rect:
+        serializedVersion: 2
+        x: 1
         y: 32
-        width: 16
-        height: 16
+        width: 14
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ab169a9fe6b62360800000000000000
-      internalID: 7144598999076838305
+      spriteID: 739a42a055508894486f6d8b9b079ad9
+      internalID: -1968468317
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Derecha_3
+      name: Walk_5
       rect:
         serializedVersion: 2
-        x: 48
+        x: 17
+        y: 32
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec2c07b696709b40aefce7498b9e6ec
+      internalID: -1866508720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f238656cba728c4c936d4b19288873c
+      internalID: 1266170195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaminarD2
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 32
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6c27ecf0280a048a7083ee4e791bd1
+      internalID: -1577848525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_8
+      rect:
+        serializedVersion: 2
+        x: 1
         y: 16
-        width: 16
-        height: 16
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df75936f9fb07f60800000000000000
-      internalID: 8030128826893041618
+      spriteID: 12b039a39d8edb54a801c55e825063ab
+      internalID: -269219778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Caminar_Derecha_4
+      name: Walk_9
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
+        x: 17
+        y: 16
+        width: 14
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: edc9dbec3c1098ee0800000000000000
-      internalID: -1258472680374559522
+      spriteID: a3c50317f557ec641b150b4914589784
+      internalID: 472485081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_10
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 16
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63f3c4463f347f49a9fd3da52fc87be
+      internalID: -1879114121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaminarD3
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 16
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9a9ad6fb9306b40a9f9b1f46820dc4
+      internalID: -95080944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_12
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57898453bc8b80444a255b78b9585fe4
+      internalID: -1910237371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9861d058df89ec8429876626ca20643a
+      internalID: 78683038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk_14
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a970d6afd07bca74ba6e60a5138a77a4
+      internalID: -223668439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CaminarD4
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c65a72d76ac7d44fa12fcc81ce0760a
+      internalID: -707769723
       vertices: []
       indices: 
       edges: []
@@ -271,10 +523,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Caminar_Derecha_3: 8030128826893041618
-      Caminar_Derecha_4: -1258472680374559522
-      Caminar_Derecha_1: -5409570386352685021
-      Caminar_Derecha_2: 7144598999076838305
+      Walk_5: -1866508720
+      Walk_12: -1910237371
+      Walk_10: -1879114121
+      Walk_0: -1019931580
+      Walk_9: 472485081
+      Walk_4: -1968468317
+      CaminarD4: -707769723
+      Walk_8: -269219778
+      Walk_6: 1266170195
+      CaminarD1: 1150530251
+      Walk_2: 181906116
+      CaminarD3: -95080944
+      Walk_13: 78683038
+      Walk_1: 642068258
+      CaminarD2: -1577848525
+      Walk_14: -223668439
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
