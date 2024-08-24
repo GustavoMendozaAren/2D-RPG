@@ -40,6 +40,14 @@ public class DialogoManager : Sinlgeton<DialogoManager>
                 despedidaMostrar = false;
                 return;
             }
+
+            if (NPCDisponible.Dialogo.ContieneInteraccionExtre)
+            {
+                UiManager.Instance.AbrirPanelInteraccion(NPCDisponible.Dialogo.InteraccionExtra);
+                AbrirCerrarPanelDialogo(false);
+                return;
+            }
+
             if (dialogoAnimado)
             {
                 ContinuarDialogo();
