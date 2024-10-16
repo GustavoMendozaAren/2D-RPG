@@ -28,6 +28,7 @@ public class UiManager : Sinlgeton<UiManager>
     [SerializeField] private TextMeshProUGUI manaTMP;
     [SerializeField] private TextMeshProUGUI expTMP;
     [SerializeField] private TextMeshProUGUI nivelTMP;
+    [SerializeField] private TextMeshProUGUI monedasTMP;
 
     [Header("Stats")]
     [SerializeField] private TextMeshProUGUI statDamageTMP;
@@ -68,6 +69,7 @@ public class UiManager : Sinlgeton<UiManager>
         manaTMP.text = $"{manaActual}/{manaMax}";
         expTMP.text = $"{((expActual/expRequeridaNewLevel)*100):F2}%";
         nivelTMP.text = $"Nivel {stats.Nivel}";
+        monedasTMP.text = MonedasManager.Instance.MonedasTotales.ToString();
     }
 
     private void ActualizarPanelStats() 

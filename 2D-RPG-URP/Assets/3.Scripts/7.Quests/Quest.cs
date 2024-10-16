@@ -6,6 +6,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class Quest : ScriptableObject
 {
+    public static Action<Quest> EventoQuestCompletado;
+
     [Header("INFO")]
     public string Nombre;
     public string ID;
@@ -20,7 +22,37 @@ public class Quest : ScriptableObject
     public QuestRecompensaItem RecompensaItem;
 
     [HideInInspector] public int CantidadACtual;
-    [HideInInspector] public bool QuestCompletado;
+    [HideInInspector] public bool QuestCompletadoCheck;
+
+    public void AniadirProgreso(int cantidad)
+    {
+        CantidadACtual += cantidad;
+        VerificarQuestCompletada();
+    }
+
+    private void VerificarQuestCompletada()
+    {
+        if(CantidadACtual >= CantidadObjetivo)
+        {
+            CantidadACtual = CantidadObjetivo;
+            QuestCompletado();
+        }
+    }
+
+    private void QuestCompletado()
+    {
+        if(QuestCompletadoCheck)
+            return;
+
+        QuestCompletadoCheck = true;
+        EventoQuestCompletado?.Invoke(this);
+    }
+
+    private void OnEnable()
+    {
+        QuestCompletadoCheck = false;
+        CantidadACtual = 0;
+    }
 }
 
 [Serializable]

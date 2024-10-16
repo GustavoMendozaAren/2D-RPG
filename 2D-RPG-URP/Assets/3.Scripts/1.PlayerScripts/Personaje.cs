@@ -4,6 +4,8 @@ using UnityEngine.Rendering;
 public class Personaje : MonoBehaviour
 {
     [SerializeField] private PersonajeStats stats;
+
+    public PersonajeExp PersonajeExp { get; private set; }
     public PersonajeVida PersonajeVida { get; private set; }
     public PlayerAnimations PlayerAnimations { get; private set; }
     public PersonajeMana PersonajeMana { get; private set; }
@@ -13,6 +15,7 @@ public class Personaje : MonoBehaviour
         PersonajeVida = GetComponent<PersonajeVida>();
         PlayerAnimations = GetComponent<PlayerAnimations>();
         PersonajeMana = GetComponent<PersonajeMana>();
+        PersonajeExp = GetComponent<PersonajeExp>();
     }
 
     public void RestaurarPersonaje() 

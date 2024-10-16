@@ -13,6 +13,16 @@ public class PersonajeQuestDescripcion : QuestDescripcion
     [Header("ITEM")]
     [SerializeField] private Image recompensaItemIcono;
     [SerializeField] private TextMeshProUGUI recompensaItemCantidad;
+
+    private void Update()
+    {
+        if (QuestPorCompletar.QuestCompletadoCheck)
+        {
+            return;
+        }
+
+        tareaObjetivo.text = $"{QuestPorCompletar.CantidadACtual}/{QuestPorCompletar.CantidadObjetivo}";
+    }
     public override void ConfigurarQuestUI(Quest questPorCargar)
     {
         base.ConfigurarQuestUI(questPorCargar);
@@ -23,6 +33,30 @@ public class PersonajeQuestDescripcion : QuestDescripcion
         recompensaItemIcono.sprite = questPorCargar.RecompensaItem.Item.Icono;
         recompensaItemCantidad.text = questPorCargar.RecompensaItem.Cantidad.ToString();
 
+    }
+
+    private void QuestCompletadoRespuesta(Quest questCompletado)
+    {
+        if(questCompletado.ID == QuestPorCompletar.ID)
+        {
+            tareaObjetivo.text = $"{QuestPorCompletar.CantidadACtual}/{QuestPorCompletar.CantidadObjetivo}";
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (QuestPorCompletar.QuestCompletadoCheck)
+        {
+            gameObject.SetActive(false);
+        }
+
+        Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
+    }
+
+    private void OnDisable()
+    {
+        Quest.EventoQuestCompletado -= QuestCompletadoRespuesta;
     }
 
 }
