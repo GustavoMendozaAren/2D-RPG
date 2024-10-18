@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ef80b5dfe8081942874b20c2dabe16f, type: 3}
+  m_Name: EstadoSeguirPeronaje
+  m_EditorClassIdentifier: 
+  Acciones:
+  - {fileID: 11400000, guid: 46fe23cebd46a4243afaca7be004354a, type: 2}
+  - {fileID: 11400000, guid: f19a267abc3d8e0448078260028b8688, type: 2}
+  Transiciones:
+  - Decision: {fileID: 11400000, guid: 334ba3560cb041044afda0c3475dbed7, type: 2}
+    EstadoVerdadero: {fileID: 11400000, guid: 1a18dae5e25d1994691d974abc13ac06, type: 2}
+    EstadoFalso: {fileID: 11400000, guid: 86a1dd5caa6837b4e8804f062d778065, type: 2}
