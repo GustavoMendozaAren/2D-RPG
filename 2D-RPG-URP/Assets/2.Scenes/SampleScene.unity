@@ -8442,14 +8442,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4212d836a5c9a754b9760f0ba5fb3967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 466151c21ca388f4ca769092a87f0755, type: 2}
   estadoInicial: {fileID: 11400000, guid: 86a1dd5caa6837b4e8804f062d778065, type: 2}
   estadoDefault: {fileID: 11400000, guid: 1a18dae5e25d1994691d974abc13ac06, type: 2}
   rangoDeteccion: 4
+  rangoDeAtaque: 3
   velocidadMovimiento: 3
   personajeLayerMask:
     serializedVersion: 2
     m_Bits: 64
+  danio: 5
+  tiempoEntreAtaques: 1.5
+  tipoAtaque: 0
   mostrarDeteccion: 1
+  mostrarRangoDeAtaque: 1
 --- !u!1 &944077661
 GameObject:
   m_ObjectHideFlags: 0
