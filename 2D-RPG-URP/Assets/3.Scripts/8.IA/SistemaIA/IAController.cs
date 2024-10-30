@@ -12,6 +12,8 @@ public enum TiposDeAtaque
 
 public class IAController : MonoBehaviour
 {
+    public static Action<float> EventoDaniorealizado;
+
     [Header("STATS")]
     [SerializeField] private PersonajeStats stats;
 
@@ -22,7 +24,9 @@ public class IAController : MonoBehaviour
     [Header("CONFIGURACION")]
     [SerializeField] private float rangoDeteccion;
     [SerializeField] private float rangoDeAtaque;
+    [SerializeField] private float rangoDeEmbestida;
     [SerializeField] private float velocidadMovimiento;
+    [SerializeField] private float velocidadEmbestida;
     [SerializeField] private LayerMask personajeLayerMask;
 
     [Header("ATAQUE")]
@@ -33,22 +37,26 @@ public class IAController : MonoBehaviour
     [Header("DEBUG")]
     [SerializeField] private bool mostrarDeteccion;
     [SerializeField] private bool mostrarRangoDeAtaque;
+    [SerializeField] private bool mostrarRangoEmbestida;
 
     private float tiempoParaSiguienteAtaque;
+    private BoxCollider2D _boxCollider2D;
 
     public Transform PerosnajeReferencia { get; set; }
     public IAEstado EstadoActual { get; set; }
     public EnemigoMovimiento EnemigoMovimientoS { get; set; }
 
     public float RangoDeteccion => rangoDeteccion;
-    public float RangoDeAtaque => rangoDeAtaque;
+
     public float Danio => danio;
     public TiposDeAtaque TipoAtaque => tipoAtaque;
     public float VelocidadMovimiento => velocidadMovimiento;
     public LayerMask PeronsajeLayerMask => personajeLayerMask;
+    public float RangoDeAtaqueDetermindo => tipoAtaque == TiposDeAtaque.Embestida ? rangoDeEmbestida : rangoDeAtaque;
 
     private void Start()
     {
+        _boxCollider2D = GetComponent<BoxCollider2D>();
         EstadoActual = estadoInicial;
         EnemigoMovimientoS = GetComponent<EnemigoMovimiento>();
     }
@@ -74,6 +82,36 @@ public class IAController : MonoBehaviour
         }
     }
 
+    public void AtaqueEmbestida(float cantidad)
+    {
+        StartCoroutine(IEEmbestida(cantidad));
+    }
+
+    private IEnumerator IEEmbestida(float cantidad)
+    {
+        Vector3 personajePosicion = PerosnajeReferencia.position;
+        Vector3 posicionInicial = transform.position;
+        Vector3 direccionHaciaPersonaje = (personajePosicion - posicionInicial).normalized;
+        Vector3 posicionDeAtaque = personajePosicion - direccionHaciaPersonaje * 0.5f;
+        _boxCollider2D.enabled = false;
+
+        float transicionDeAtaque = 0f;
+        while (transicionDeAtaque <= 1f) 
+        {
+            transicionDeAtaque += Time.deltaTime * velocidadMovimiento;
+            float interpolacion = (-Mathf.Pow(transicionDeAtaque, 2) + transicionDeAtaque) * 4f;
+            transform.position = Vector3.Lerp(posicionInicial, posicionDeAtaque, interpolacion);
+            yield return null;
+        }
+
+        if (PerosnajeReferencia != null)
+        {
+            AplicarDanioAlPersonaje(cantidad);
+        }
+
+        _boxCollider2D.enabled = true;
+    }
+
     public void AplicarDanioAlPersonaje(float cantidad)
     {
         float danioPorRealizar = 0;
@@ -84,6 +122,7 @@ public class IAController : MonoBehaviour
 
         danioPorRealizar = Mathf.Max(cantidad - stats.Defensa, 1f);
         PerosnajeReferencia.GetComponent<PersonajeVida>().RecibirDamage(danioPorRealizar);
+        EventoDaniorealizado?.Invoke(danioPorRealizar);
     }
 
     public bool PersonajeEnRangoDeAtaque(float rango)
@@ -123,6 +162,11 @@ public class IAController : MonoBehaviour
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position, rangoDeAtaque);
+        }
+        if (mostrarRangoEmbestida)
+        {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawWireSphere(transform.position, rangoDeEmbestida);
         }
     }
 }

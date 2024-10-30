@@ -22,9 +22,17 @@ public class AccionAtacarPersonaje : IAAccion
             return;
         }
 
-        if (controller.PersonajeEnRangoDeAtaque(controller.RangoDeAtaque))
+        if (controller.PersonajeEnRangoDeAtaque(controller.RangoDeAtaqueDetermindo))
         {
-            controller.AtaqueMelee(controller.Danio);
+            if (controller.TipoAtaque == TiposDeAtaque.Embestida)
+            {
+                controller.AtaqueEmbestida(controller.Danio);
+            }
+            else
+            {
+                controller.AtaqueMelee(controller.Danio);
+            }
+            
             controller.ActualizarTiempoEntreAtaques();
         }
     }

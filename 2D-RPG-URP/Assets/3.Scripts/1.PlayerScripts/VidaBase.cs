@@ -26,6 +26,7 @@ public class VidaBase : MonoBehaviour
             ActualizarBarraVida(Salud, saludMax);
             if (Salud <= 0) 
             {
+                Salud = 0f;
                 ActualizarBarraVida(Salud, saludMax);
                 PersonajeDerrotado();
             }

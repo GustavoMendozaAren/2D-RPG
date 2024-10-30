@@ -99,6 +99,24 @@ public class InventarioUI : Sinlgeton<InventarioUI>
         }
     }
 
+    public void EquiparItem()
+    {
+        if (SlotSeleccionado != null)
+        {
+            SlotSeleccionado.SlotEquiparItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+
+    public void RemoverItem()
+    {
+        if (SlotSeleccionado != null)
+        {
+            SlotSeleccionado.SlotRemoverItem();
+            SlotSeleccionado.SeleccionarSlot();
+        }
+    }
+
     #region Evento
 
     private void SlotInteraccionRespuesta(TipoDeInteraccion tipo, int index)
