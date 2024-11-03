@@ -15,8 +15,13 @@ public class ContenedorArma : Sinlgeton<ContenedorArma>
         ArmaEquipada = itemArma;
         armaIcono.sprite = itemArma.Arma.ArmaIcono;
         armaIcono.gameObject.SetActive(true);
-        armaSkillIcono.sprite = itemArma.Arma.IconoSkill;
-        armaSkillIcono.gameObject.SetActive(true);
+
+        if (itemArma.Arma.Tipo == TipoArma.Magia)
+        {
+            armaSkillIcono.sprite = itemArma.Arma.IconoSkill;
+            armaSkillIcono.gameObject.SetActive(true);
+        }
+
         Inventario.Instance.Personaje.PersonajeAtaque.EquiparArma(itemArma);
     }
 

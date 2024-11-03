@@ -44,32 +44,51 @@ public class PersonajeAtaque : MonoBehaviour
     private void EnemigoRangoSeleccionado(EnemigoInteraccion enemigoSeleccionado)
     {
         if (ArmaEquipada == null)
-        {
             return;
-        }
 
         if (ArmaEquipada.Tipo != TipoArma.Magia)
-        {
             return;
-        }
 
         if (EnemigoObjetivo == enemigoSeleccionado)
-        {
             return;
-        }
 
         EnemigoObjetivo = enemigoSeleccionado;
-        EnemigoObjetivo.MostrarEnemigoSeleccionado(true);
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(true, TipoDeteccion.Rango);
     }
 
     private void EnemigoNoSeleccionado()
     {
         if (EnemigoObjetivo == null)
-        {
             return;
-        }
 
-        EnemigoObjetivo.MostrarEnemigoSeleccionado(false);
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(false, TipoDeteccion.Rango);
+        EnemigoObjetivo = null;
+    }
+
+    private void EnemigoMeleeDetectado(EnemigoInteraccion enemigoDetectado)
+    {
+        if (ArmaEquipada == null)
+            return;
+
+        if (ArmaEquipada.Tipo != TipoArma.Melee)
+            return;
+
+        EnemigoObjetivo = enemigoDetectado;
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(true, TipoDeteccion.Melee);
+    }
+
+    private void EnemigoMeleePerdido()
+    {
+        if (ArmaEquipada == null)
+            return;
+
+        if (EnemigoObjetivo == null)
+            return;
+
+        if (ArmaEquipada.Tipo != TipoArma.Melee)
+            return;
+
+        EnemigoObjetivo.MostrarEnemigoSeleccionado(false, TipoDeteccion.Melee);
         EnemigoObjetivo = null;
     }
 
@@ -78,12 +97,17 @@ public class PersonajeAtaque : MonoBehaviour
         SeleccionManager.EventoEnemigoSeleciconado += EnemigoRangoSeleccionado;
         SeleccionManager.EventoObjetoNoSeleccionado += EnemigoNoSeleccionado;
 
+        PersonajeDetector.EventoEnemigoDetectado += EnemigoMeleeDetectado;
+        PersonajeDetector.EventoEnemigoPerdido += EnemigoMeleePerdido;
     }
 
     private void OnDisable() 
     {
         SeleccionManager.EventoEnemigoSeleciconado -= EnemigoRangoSeleccionado;
         SeleccionManager.EventoObjetoNoSeleccionado -= EnemigoNoSeleccionado;
+
+        PersonajeDetector.EventoEnemigoDetectado -= EnemigoMeleeDetectado;
+        PersonajeDetector.EventoEnemigoPerdido -= EnemigoMeleePerdido;
     }
 
 }
