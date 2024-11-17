@@ -6,9 +6,11 @@ public class PlayerAnimations : MonoBehaviour
 {
     [SerializeField] private string layerIdle;
     [SerializeField] private string layerCaminar;
+    [SerializeField] private string layerAtacar;
 
     private Animator _animator;
     private PlayerMovement _playerMovement;
+    private PersonajeAtaque _personajeAtaque;
 
     private readonly int direccionX = Animator.StringToHash("X");
     private readonly int direccionY = Animator.StringToHash("Y");
@@ -18,6 +20,7 @@ public class PlayerAnimations : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _playerMovement = GetComponent<PlayerMovement>();
+        _personajeAtaque = GetComponent<PersonajeAtaque>();
     }
 
     private void Update()
@@ -49,7 +52,11 @@ public class PlayerAnimations : MonoBehaviour
 
     private void ActualizarLayers()
     {
-        if (_playerMovement.EnMovimiento)
+        if (_personajeAtaque.Atacando)
+        {
+            ActivarLayer(layerAtacar);
+        }
+        else if (_playerMovement.EnMovimiento)
         {
             ActivarLayer(layerCaminar);
         }

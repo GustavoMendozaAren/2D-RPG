@@ -24,4 +24,10 @@ public class EnemigoInteraccion : MonoBehaviour
             seleccionMeleeFX.SetActive(estado);
         }
     }
+
+    public void DesactivarSpriteSeleccion()
+    {
+        seleccionMeleeFX.SetActive (false);
+        seleccionRangoFX.SetActive (false);
+    }
 }

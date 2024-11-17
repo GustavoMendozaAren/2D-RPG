@@ -15,7 +15,10 @@ public class PersonajeDetector : MonoBehaviour
         if (collision.CompareTag("Enemigo"))
         {
             EnemigoDetectado = collision.GetComponent<EnemigoInteraccion>();
-            EventoEnemigoDetectado?.Invoke(EnemigoDetectado);
+            if (EnemigoDetectado.GetComponent<EnemigoVida>().Salud > 0)
+            {
+                EventoEnemigoDetectado?.Invoke(EnemigoDetectado);
+            }
         }
     }
 
