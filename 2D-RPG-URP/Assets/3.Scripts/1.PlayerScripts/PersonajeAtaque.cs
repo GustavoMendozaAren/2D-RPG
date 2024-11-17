@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class PersonajeAtaque : MonoBehaviour
 {
+    public static Action<float> EventoEnemigoDaniado;
+
     [Header("STATS")]
     [SerializeField] private PersonajeStats stats;
 
@@ -72,8 +74,10 @@ public class PersonajeAtaque : MonoBehaviour
         }
         else
         {
+            float danio = ObtenerDanio();
             EnemigoVida enemigoVida = EnemigoObjetivo.gameObject.GetComponent<EnemigoVida>();
-            enemigoVida.RecibirDamage(ObtenerDanio());
+            enemigoVida.RecibirDamage(danio);
+            EventoEnemigoDaniado?.Invoke(danio);
         }
     }
 

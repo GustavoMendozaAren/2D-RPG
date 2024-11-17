@@ -7,8 +7,9 @@ public class TextoAnimacion : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI danioTxt;
 
-    public void EstablecerTexto(float cantidad)
+    public void EstablecerTexto(float cantidad, Color color)
     {
         danioTxt.text = cantidad.ToString();
+        danioTxt.color = color;
     }
 }

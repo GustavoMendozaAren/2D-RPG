@@ -6548,6 +6548,7 @@ MonoBehaviour:
   pooler: {fileID: 207400831}
   canvasTextoAnimacionPrefab: {fileID: 6600070046002965464, guid: eaac06921ec62e44a8bbbab27e8b9578, type: 3}
   canvasTextoPosicion: {fileID: 990872114}
+  tipoPersonaje: 0
 --- !u!114 &655028702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9446,6 +9447,8 @@ GameObject:
   - component: {fileID: 925370421}
   - component: {fileID: 925370422}
   - component: {fileID: 925370423}
+  - component: {fileID: 925370425}
+  - component: {fileID: 925370424}
   m_Layer: 7
   m_Name: EnemigoRojo
   m_TagString: Enemigo
@@ -9617,6 +9620,7 @@ Transform:
   - {fileID: 2131255293}
   - {fileID: 1119181590}
   - {fileID: 1612477302}
+  - {fileID: 1813700394}
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9679,6 +9683,35 @@ MonoBehaviour:
   saludMax: 20
   barraVidaPrefab: {fileID: 3475331101778600206, guid: 01a6e1cb0e7a0b44ba1988f8048d1ec2, type: 3}
   barraVidaPosicion: {fileID: 1028147846}
+--- !u!114 &925370424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925370413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4aa444613269c1c49b026dcbc0a7064f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidadPorCrear: 10
+--- !u!114 &925370425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925370413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0062ae956eb890b42b45a1d64cbdd1cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooler: {fileID: 925370424}
+  canvasTextoAnimacionPrefab: {fileID: 6600070046002965464, guid: eaac06921ec62e44a8bbbab27e8b9578, type: 3}
+  canvasTextoPosicion: {fileID: 1813700394}
+  tipoPersonaje: 1
 --- !u!1 &944077661
 GameObject:
   m_ObjectHideFlags: 0
@@ -59178,6 +59211,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8800649083633303433, guid: d98bdeef7c595bd4b80f415b1af05d47, type: 3}
   m_PrefabInstance: {fileID: 1811910007}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1813700393
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813700394}
+  m_Layer: 7
+  m_Name: TextoPosicion
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1813700394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813700393}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.54, y: -0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 925370420}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1836899291
 GameObject:
   m_ObjectHideFlags: 0
