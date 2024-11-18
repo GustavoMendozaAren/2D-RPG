@@ -26,6 +26,11 @@ public class LootManager : Sinlgeton<LootManager>
         }
     }
 
+    public void CerrarPanel()
+    {
+        panelLoot.SetActive(false);
+    }
+
     private void CargarLootAlPanel(DropItem dropItem)
     {
         if (dropItem.ItemRecogido)

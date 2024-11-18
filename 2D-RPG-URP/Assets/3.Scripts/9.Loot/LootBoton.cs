@@ -17,4 +17,16 @@ public class LootBoton : MonoBehaviour
         itemIcono.sprite = dropItem.Item.Icono;
         itemNombre.text = $"{dropItem.Item.Nombre} x{dropItem.Cantidad}";
     }
+
+    public void RecogerItem()
+    {
+        if (ItemPorRecoger == null)
+        {
+            return;
+        }
+
+        Inventario.Instance.AniadirItem(ItemPorRecoger.Item, ItemPorRecoger.Cantidad);
+        ItemPorRecoger.ItemRecogido = true;
+        Destroy(gameObject);
+    }
 }
