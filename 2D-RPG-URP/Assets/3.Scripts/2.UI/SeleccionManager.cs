@@ -33,13 +33,15 @@ public class SeleccionManager : MonoBehaviour
             {
                 EnemigoSeleciconado = hit.collider.GetComponent<EnemigoInteraccion>();
                 EnemigoVida enemigoVida = EnemigoSeleciconado.GetComponent<EnemigoVida>();
+                
                 if (enemigoVida.Salud > 0f)
                 {
                     EventoEnemigoSeleciconado?.Invoke(EnemigoSeleciconado);
                 }
                 else
                 {
-                    LootManager.Instance.MostrarLoot();
+                    EnemigoLoot loot = EnemigoSeleciconado.GetComponent<EnemigoLoot>();
+                    LootManager.Instance.MostrarLoot(loot);
                 }
             }
             else
