@@ -74,4 +74,19 @@ public class PersonajeExp : MonoBehaviour
     {
         UiManager.Instance.ActualizarExpPersonaje(expActualTemp, expRequeridaNextLevel);
     }
+
+    private void RespuestaEnemigoDerrotado(float exp)
+    {
+        AniadirExp(exp);
+    }
+
+    private void OnEnable()
+    {
+        EnemigoVida.EventoEnemigoDerrotado += RespuestaEnemigoDerrotado;
+    }
+
+    private void OnDisable()
+    {
+        EnemigoVida.EventoEnemigoDerrotado -= RespuestaEnemigoDerrotado;
+    }
 }

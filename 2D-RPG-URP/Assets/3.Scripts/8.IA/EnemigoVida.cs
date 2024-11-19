@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemigoVida : VidaBase
 {
+    public static Action<float> EventoEnemigoDerrotado;
+
     [Header("VIDA")]
     [SerializeField] private EnimgoBarraVida barraVidaPrefab;
     [SerializeField] private Transform barraVidaPosicion;
@@ -14,6 +17,7 @@ public class EnemigoVida : VidaBase
     private EnimgoBarraVida _enemigoBarraVidaCreada;
     private EnemigoInteraccion _enemigoInteraccion;
     private EnemigoMovimiento _enemigoMovimiento;
+    private EnemigoLoot _enemigoLoot;
     private SpriteRenderer _spriteRederer;
     private BoxCollider2D _boxCollider2D;
     private IAController _controller;
@@ -23,6 +27,7 @@ public class EnemigoVida : VidaBase
         _enemigoInteraccion = GetComponent<EnemigoInteraccion>();
         _enemigoMovimiento = GetComponent<EnemigoMovimiento>();
         _spriteRederer = GetComponent<SpriteRenderer>();
+        _enemigoLoot = GetComponent<EnemigoLoot>();
         _boxCollider2D = GetComponent<BoxCollider2D>();
         _controller = GetComponent<IAController>();
     }
@@ -47,6 +52,10 @@ public class EnemigoVida : VidaBase
     protected override void PersonajeDerrotado()
     {
         DesatcivarEnemigo();
+        EventoEnemigoDerrotado?.Invoke(_enemigoLoot.ExpGanada);
+        QuestManager.Instance.AniadirProgreso("Mata10", 1);
+        QuestManager.Instance.AniadirProgreso("Mata25", 1);
+        QuestManager.Instance.AniadirProgreso("Mata50", 1);
     }
 
     private void DesatcivarEnemigo()

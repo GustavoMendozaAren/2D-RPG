@@ -780,7 +780,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_35
+      name: Silla1
       rect:
         serializedVersion: 2
         x: 7
@@ -843,7 +843,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_38
+      name: Mesa
       rect:
         serializedVersion: 2
         x: 48
@@ -1284,7 +1284,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TilesetElement_59
+      name: Escalera1
       rect:
         serializedVersion: 2
         x: 97
@@ -1460,7 +1460,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1481,7 +1481,7 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1502,7 +1502,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1523,7 +1523,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1544,7 +1544,7 @@ TextureImporter:
         width: 16
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1565,7 +1565,7 @@ TextureImporter:
         width: 16
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1586,7 +1586,7 @@ TextureImporter:
         width: 16
         height: 21
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1607,7 +1607,7 @@ TextureImporter:
         width: 9
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1628,7 +1628,7 @@ TextureImporter:
         width: 12
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1649,7 +1649,7 @@ TextureImporter:
         width: 11
         height: 14
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1670,7 +1670,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1678,6 +1678,132 @@ TextureImporter:
       bones: []
       spriteID: 80d9f37afaba8a346abddc6bf68305ad
       internalID: -1027292170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estanteria-Vacia
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 98
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67f8adf8eaef4ce49b0ca972d6acb80b
+      internalID: -313754760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Estanteria-Llena
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 98
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fb2ead2f25d8b4799a5e9ad5a84604
+      internalID: -794872692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MuebleTipo1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369d8e7ff2cc94645a4a1bd9f70343cb
+      internalID: -2072053834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EstPeq-Vacia
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 98
+        width: 16
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb547f0a347d1b74688604e8cb4c9dc7
+      internalID: 355763527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CajoneraPeq1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e800898dec742e5429a4083fbac341d4
+      internalID: -1214637015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CajoneraPeq2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f572d2fa65287d44a554e38b45f5082
+      internalID: -1157873548
       vertices: []
       indices: 
       edges: []
@@ -1693,15 +1819,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetElement_34: -1870279573
+      TilesetElement_39: -1991476820
       TilesetElement_21: 2095107499
       TilesetElement_60: 912141467
       TilesetElement_6: 2075915850
+      CajoneraPeq1: -1214637015
       TilesetElement_8: 1184375047
       TilesetElement_44: 1750047766
       TilesetElement_2: -605741494
       TilesetElement_14: 623419561
       TilesetElement_15: -2068280917
+      Escalera1: 70284779
       TilesetElement_19: -1710615721
       TilesetElement_12: 1276704497
       TilesetElement_30: 231387708
@@ -1718,7 +1846,9 @@ TextureImporter:
       TilesetElement_27: -1734134265
       TilesetElement_61: -609942843
       TilesetElement_18: -179413254
+      EstPeq-Vacia: 355763527
       TilesetElement_69: -1494116059
+      Silla1: 1240284426
       TilesetElement_64: 168692234
       TilesetElement_0: 1707977353
       TilesetElement_71: -1242323269
@@ -1726,25 +1856,26 @@ TextureImporter:
       TilesetElement_51: -101674609
       TilesetElement_10: -208153335
       TilesetElement_32: 1146552928
-      TilesetElement_28: -2022006673
       TilesetElement_17: 1235059809
       TilesetElement_46: 1311890726
+      TilesetElement_28: -2022006673
       TilesetElement_66: 101983321
       TilesetElement_23: 1661885367
       TilesetElement_45: 74431438
       TilesetElement_50: -1815790014
       TilesetElement_22: -1501277164
       TilesetElement_52: 921108457
+      Mesa: -322175420
+      Estanteria-Vacia: -313754760
+      MuebleTipo1: -2072053834
       TilesetElement_65: -1808877634
       TilesetElement_20: -604553647
       TilesetElement_29: 1220764631
       TilesetElement_70: -183075827
       TilesetElement_55: 758973232
-      TilesetElement_59: 70284779
-      TilesetElement_38: -322175420
       TilesetElement_72: -1027292170
+      Estanteria-Llena: -794872692
       TilesetElement_26: -1611332983
-      TilesetElement_35: 1240284426
       Limites: 1141626115
       TilesetElement_41: -1840870819
       TilesetElement_33: 1122590573
@@ -1753,6 +1884,7 @@ TextureImporter:
       TilesetElement_25: -965388877
       TilesetElement_11: 1358780515
       TilesetElement_40: 1405528998
+      CajoneraPeq2: -1157873548
       TilesetElement_4: -973740552
       TilesetElement_3: 1165428543
       TilesetElement_1: 604410224
@@ -1766,7 +1898,7 @@ TextureImporter:
       TilesetElement_63: 692092561
       TilesetElement_43: -404174007
       TilesetElement_58: 1220023422
-      TilesetElement_39: -1991476820
+      TilesetElement_34: -1870279573
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
