@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a0e7440b6a025f4b9dd62d55496a8e1, type: 3}
-  m_Name: ItemPocionVida
+  m_Script: {fileID: 11500000, guid: 02e3da1a7f2bffc4e9e789ec6aacc089, type: 3}
+  m_Name: ItemPergaminoLibre
   m_EditorClassIdentifier: 
-  ID: PocionVida
-  Nombre: Pocion de vida
-  Icono: {fileID: 21300000, guid: 76e165e000d338c4c804e4d42b7ef903, type: 3}
-  Descripcion: Pocion que restaura 10 pts de salud
-  Tipo: 1
+  ID: PergaminoLibre
+  Nombre: Pergamino Libre
+  Icono: {fileID: 21300000, guid: 284fea96acc626f4eb5b831a595223d6, type: 3}
+  Descripcion: PergaminoLibreQuePuedeSerUsadoPAraCrearCualquierItem
+  Tipo: 2
   EsConsumible: 1
   EsAcumulable: 1
-  AcumulacionMax: 20
+  AcumulacionMax: 50
   Cantidad: 0
-  HpRestauracion: 10

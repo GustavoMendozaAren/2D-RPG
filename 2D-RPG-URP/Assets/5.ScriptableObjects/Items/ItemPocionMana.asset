@@ -19,6 +19,6 @@ MonoBehaviour:
   Tipo: 1
   EsConsumible: 1
   EsAcumulable: 1
-  AcumulacionMax: 10
+  AcumulacionMax: 20
   Cantidad: 0
   MpRestauracion: 20
