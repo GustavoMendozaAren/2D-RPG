@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c032ef06abd1374bb45600c25b71af4, type: 3}
+  m_Name: ListaRecetas
+  m_EditorClassIdentifier: 
+  Recetas:
+  - Nombre: MediPack
+    Item1: {fileID: 11400000, guid: ff3bf26c46902434baa2c5c114afa52f, type: 2}
+    Item1CantidadRequerida: 5
+    Item2: {fileID: 11400000, guid: cb1d50331da1fcd47ab41402aa9a67b1, type: 2}
+    Item2CantidadRequerida: 5
+    ItemResultado: {fileID: 11400000, guid: 0201e5c391685fb49afc8fc8e18cb275, type: 2}
+    ItemResultadoCantidad: 5
+  - Nombre: Tridente
+    Item1: {fileID: 11400000, guid: 7d8a0525410137d4b98d1ffb53f22a20, type: 2}
+    Item1CantidadRequerida: 5
+    Item2: {fileID: 11400000, guid: beeed8b5550d5bf4da69fc3c739660c5, type: 2}
+    Item2CantidadRequerida: 3
+    ItemResultado: {fileID: 11400000, guid: 1757c9c7e1bc52c4b9c223ec4ad3f5d6, type: 2}
+    ItemResultadoCantidad: 1

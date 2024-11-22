@@ -15,6 +15,7 @@ public class UiManager : Sinlgeton<UiManager>
     [Header("Paneles")]
     [SerializeField] private GameObject panelStats;
     [SerializeField] private GameObject panelTienda;
+    [SerializeField] private GameObject panelCrafting;
     [SerializeField] private GameObject panelInventario;
     [SerializeField] private GameObject panelInspectorQuest;
     [SerializeField] private GameObject panelPersonajeQuest;
@@ -123,6 +124,16 @@ public class UiManager : Sinlgeton<UiManager>
         panelTienda.SetActive(!panelTienda.activeSelf);
     }
 
+    public void AbrirPanelCrafting()
+    {
+        panelCrafting.SetActive(true);
+    }
+
+    public void CerrarPanelCrafting()
+    {
+        panelCrafting.SetActive(false);
+    }
+
     public void AbrirCerrarPanelInventario() 
     {
         panelInventario.SetActive(!panelInventario.activeSelf);
@@ -149,6 +160,7 @@ public class UiManager : Sinlgeton<UiManager>
                 AbrirCerrarPanelTienda();
                 break;
             case InteraccionExtraNPC.Crafting:
+                AbrirPanelCrafting();
                 break;
         }
     }
