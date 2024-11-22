@@ -16,6 +16,7 @@ public class UiManager : Sinlgeton<UiManager>
     [SerializeField] private GameObject panelStats;
     [SerializeField] private GameObject panelTienda;
     [SerializeField] private GameObject panelCrafting;
+    [SerializeField] private GameObject panelCraftingInfo;
     [SerializeField] private GameObject panelInventario;
     [SerializeField] private GameObject panelInspectorQuest;
     [SerializeField] private GameObject panelPersonajeQuest;
@@ -132,6 +133,12 @@ public class UiManager : Sinlgeton<UiManager>
     public void CerrarPanelCrafting()
     {
         panelCrafting.SetActive(false);
+        AbrirCerrarPanelCraftingInfo(false);
+    }
+
+    public void AbrirCerrarPanelCraftingInfo(bool estado)
+    {
+        panelCraftingInfo.SetActive(estado);
     }
 
     public void AbrirCerrarPanelInventario() 

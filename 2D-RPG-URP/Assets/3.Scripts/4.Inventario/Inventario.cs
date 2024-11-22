@@ -80,6 +80,21 @@ public class Inventario : Sinlgeton<Inventario>
         return indexDelItem;
     }
 
+    public int ObtenerCantidadDeItems(string itemID)
+    {
+        List<int> indexes = VereficarExistencias(itemID);
+        int cantidadTotal = 0;
+        foreach (int index in indexes)
+        {
+            if (itemsInventario[index].ID == itemID)
+            {
+                cantidadTotal += itemsInventario[index].Cantidad;
+            }
+        }
+
+        return cantidadTotal;
+    }
+
     private void AniadirItemEnSlotDisponible(InventarioItem item, int cantidad)
     {
         for (int i = 0; i < itemsInventario.Length; i++)

@@ -18886,6 +18886,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recetaTarjetaPrefab: {fileID: 6661480957517202574, guid: 16f5d1b38ae83cd489088982eaf6b219, type: 3}
   recetaContenedor: {fileID: 167418759}
+  primerMaterialIcono: {fileID: 1823782406}
+  segundoMaterialIcono: {fileID: 1107272935}
+  primerMaterialNombre: {fileID: 1298429009}
+  segundoMaterialNombre: {fileID: 1403569218}
+  primerMaterialCantidad: {fileID: 1093089406}
+  segundoMaterialCantidad: {fileID: 1794440193}
+  recetaMendaje: {fileID: 1646607207}
+  buttonCraftear: {fileID: 1880975688}
   recetas: {fileID: 11400000, guid: 55ec82339b0cb7c4b99c200e5d790728, type: 2}
 --- !u!1 &1166974741
 GameObject:
@@ -19088,6 +19096,7 @@ MonoBehaviour:
   panelStats: {fileID: 181124292}
   panelTienda: {fileID: 1765512803}
   panelCrafting: {fileID: 1745292376}
+  panelCraftingInfo: {fileID: 1290313490}
   panelInventario: {fileID: 839561085}
   panelInspectorQuest: {fileID: 693042833}
   panelPersonajeQuest: {fileID: 506216423}
@@ -66480,7 +66489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1290313491
 RectTransform:
   m_ObjectHideFlags: 0
