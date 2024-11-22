@@ -15,8 +15,13 @@ MonoBehaviour:
   Damage: 5
   Defensa: 2
   Velocidad: 5
-  Nivel: 1
+  Nivel: 5
   ExpActual: 0
-  ExpRequerida: 2
+  ExpRequerida: 32
+  ExpTotal: 30
   PorcentajeCritico: 0
   PorcentajeBloqueo: 0
+  Fuerza: 0
+  Inteligencia: 0
+  Destreza: 0
+  PuntosDisponibles: 12

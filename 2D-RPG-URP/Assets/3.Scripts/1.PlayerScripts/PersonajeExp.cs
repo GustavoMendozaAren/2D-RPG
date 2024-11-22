@@ -13,7 +13,6 @@ public class PersonajeExp : MonoBehaviour
     [SerializeField] private int valorIncremental;
 
     private float expActual;
-    private float expActualTemp;
     private float expRequeridaNextLevel;
 
     void Start()
@@ -34,27 +33,24 @@ public class PersonajeExp : MonoBehaviour
 
     public void AniadirExp(float expObtenida) 
     {
-        if (expObtenida > 0f) 
-        {
-            float expRestanteNuevoNivel = expRequeridaNextLevel - expActualTemp;
-            if (expObtenida >= expRestanteNuevoNivel)
-            {
-                expObtenida -= expRestanteNuevoNivel;
-                expActual += expObtenida;
-                ActualizarNivel();
-                AniadirExp(expObtenida);
-            }
-            else 
-            {
-                expActual += expObtenida;
-                expActualTemp += expObtenida;
-                if (expActualTemp == expRequeridaNextLevel) 
-                {
-                    ActualizarNivel();
-                }
-            }
-        }
+        if (expObtenida <= 0)
+            return;
+
+        expActual += expObtenida;
         stats.ExpActual = expActual;
+
+        if (expActual == expRequeridaNextLevel)
+        {
+            ActualizarNivel();
+        }
+        else if(expActual > expRequeridaNextLevel)
+        {
+            float dif = expActual - expRequeridaNextLevel;
+            ActualizarNivel();
+            AniadirExp(dif);
+        }
+
+        stats.ExpTotal += expObtenida;
         ActualizarBarraExp();
     }
 
@@ -63,7 +59,8 @@ public class PersonajeExp : MonoBehaviour
         if (stats.Nivel < nivelMax) 
         {
             stats.Nivel++;
-            expActualTemp = 0f;
+            stats.ExpActual = 0;
+            expActual = 0;
             expRequeridaNextLevel *= valorIncremental;
             stats.ExpRequerida = expRequeridaNextLevel;
             stats.PuntosDisponibles += 3;
@@ -72,7 +69,7 @@ public class PersonajeExp : MonoBehaviour
 
     private void ActualizarBarraExp() 
     {
-        UiManager.Instance.ActualizarExpPersonaje(expActualTemp, expRequeridaNextLevel);
+        UiManager.Instance.ActualizarExpPersonaje(expActual, expRequeridaNextLevel);
     }
 
     private void RespuestaEnemigoDerrotado(float exp)

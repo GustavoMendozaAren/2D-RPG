@@ -19119,6 +19119,7 @@ MonoBehaviour:
   statNivelTMP: {fileID: 396300542}
   statExpTMP: {fileID: 717888314}
   statExpRequeridaTMP: {fileID: 220275391}
+  statExpTotalTMP: {fileID: 1843807819}
   atributoFuerzaTMP: {fileID: 964018201}
   atributoInteligenciaTMP: {fileID: 873136259}
   atributoDestrezaTMP: {fileID: 141176296}
@@ -19282,7 +19283,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1218657544
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19323,7 +19324,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bloqueo:'
+  m_text: 'Exp Tot:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -66937,7 +66938,7 @@ GameObject:
   - component: {fileID: 1356917990}
   - component: {fileID: 1356917991}
   m_Layer: 5
-  m_Name: StatVacio (1)
+  m_Name: StatXPTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72377,12 +72378,12 @@ GameObject:
   - component: {fileID: 1843807820}
   - component: {fileID: 1843807819}
   m_Layer: 5
-  m_Name: Valor
+  m_Name: ValorTotal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1843807818
 RectTransform:
   m_ObjectHideFlags: 0
