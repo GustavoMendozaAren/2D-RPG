@@ -23,6 +23,7 @@ public class Quest : ScriptableObject
 
     [HideInInspector] public int CantidadACtual;
     [HideInInspector] public bool QuestCompletadoCheck;
+    [HideInInspector] public bool QuestAceptado;
 
     public void AniadirProgreso(int cantidad)
     {
@@ -48,7 +49,7 @@ public class Quest : ScriptableObject
         EventoQuestCompletado?.Invoke(this);
     }
 
-    private void OnEnable()
+    public void ResetQuest()
     {
         QuestCompletadoCheck = false;
         CantidadACtual = 0;

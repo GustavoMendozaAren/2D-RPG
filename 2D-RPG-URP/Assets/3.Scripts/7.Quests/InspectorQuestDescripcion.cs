@@ -16,6 +16,7 @@ public class InspectorQuestDescripcion : QuestDescripcion
         if (QuestPorCompletar == null)
             return;
 
+        QuestPorCompletar.QuestAceptado = true;
         QuestManager.Instance.AniadirQuest(QuestPorCompletar);
         gameObject.SetActive(false);
     }

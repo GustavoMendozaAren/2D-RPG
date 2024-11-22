@@ -81,7 +81,10 @@ public class QuestManager : Sinlgeton<QuestManager>
     public void AniadirProgreso(string questID, int cantidad)
     {
         Quest questPorActualizar = QuestExiste(questID);
-        questPorActualizar.AniadirProgreso(cantidad);
+        if (questPorActualizar.QuestAceptado)
+        {
+            questPorActualizar.AniadirProgreso(cantidad);
+        }
     }
 
     private Quest QuestExiste(string questID)
@@ -115,6 +118,11 @@ public class QuestManager : Sinlgeton<QuestManager>
 
     private void OnEnable()
     {
+        for (int i = 0; i < questDisponibles.Length; i++)
+        {
+            questDisponibles[i].ResetQuest();
+        }
+
         Quest.EventoQuestCompletado += QuestCompletadoRespuesta;
     }
 
