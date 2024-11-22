@@ -18894,6 +18894,9 @@ MonoBehaviour:
   segundoMaterialCantidad: {fileID: 1794440193}
   recetaMendaje: {fileID: 1646607207}
   buttonCraftear: {fileID: 1880975688}
+  itemResultadoIcono: {fileID: 1622565793}
+  itemResultadoNombre: {fileID: 68426091}
+  itemResultadoDescripcion: {fileID: 1519010108}
   recetas: {fileID: 11400000, guid: 55ec82339b0cb7c4b99c200e5d790728, type: 2}
 --- !u!1 &1166974741
 GameObject:
@@ -72646,7 +72649,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1880975689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1166788768}
+        m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+        m_MethodName: Craftear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880975689
 MonoBehaviour:
   m_ObjectHideFlags: 0

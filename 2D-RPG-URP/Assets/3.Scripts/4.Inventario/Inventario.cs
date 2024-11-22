@@ -95,6 +95,15 @@ public class Inventario : Sinlgeton<Inventario>
         return cantidadTotal;
     }
 
+    public void ConsumirItem(string itemID)
+    {
+        List<int> indexes = VereficarExistencias(itemID);
+        if (indexes.Count > 0)
+        {
+            ElimiarItem(indexes[indexes.Count - 1]);
+        }
+    }
+
     private void AniadirItemEnSlotDisponible(InventarioItem item, int cantidad)
     {
         for (int i = 0; i < itemsInventario.Length; i++)

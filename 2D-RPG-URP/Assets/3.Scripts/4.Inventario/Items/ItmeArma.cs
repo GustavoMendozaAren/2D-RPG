@@ -29,4 +29,10 @@ public class ItmeArma : InventarioItem
         ContenedorArma.Instance.RemoverArma();
         return true;
     }
+
+    public override string DescripcionItemCrafting()
+    {
+        string descripcion = $"- Chance Critico: {Arma.ChanceCritico}%\n" + $"- Chance bloqueo: {Arma.ChanceBloqueo}%";
+        return descripcion;
+    }
 }

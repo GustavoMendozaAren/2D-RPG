@@ -20,6 +20,11 @@ public class CraftingManager : Sinlgeton<CraftingManager>
     [SerializeField] private TextMeshProUGUI recetaMendaje;
     [SerializeField] private Button buttonCraftear;
 
+    [Header("ITEM RESULTADO")]
+    [SerializeField] private Image itemResultadoIcono;
+    [SerializeField] private TextMeshProUGUI itemResultadoNombre;
+    [SerializeField] private TextMeshProUGUI itemResultadoDescripcion;
+
     [Header("RECETAS")]
     [SerializeField] private RecetaLista recetas;
 
@@ -48,5 +53,46 @@ public class CraftingManager : Sinlgeton<CraftingManager>
         segundoMaterialNombre.text = receta.Item2.Nombre;
         primerMaterialCantidad.text = $"{Inventario.Instance.ObtenerCantidadDeItems(receta.Item1.ID)}/{receta.Item1CantidadRequerida}";
         segundoMaterialCantidad.text = $"{Inventario.Instance.ObtenerCantidadDeItems(receta.Item2.ID)}/{receta.Item2CantidadRequerida}";
+
+        if (SePuedeCraftear(receta))
+        {
+            recetaMendaje.text = "Receta disponible";
+            buttonCraftear.interactable = true;
+        }
+        else
+        {
+            recetaMendaje.text = "Necesitas mas materiales";
+            buttonCraftear.interactable = false;
+        }
+
+        itemResultadoIcono.sprite = receta.ItemResultado.Icono;
+        itemResultadoNombre.text = receta.ItemResultado.Nombre;
+        itemResultadoDescripcion.text = receta.ItemResultado.DescripcionItemCrafting();
+    }
+
+    public bool SePuedeCraftear(Receta receta)
+    {
+        if (Inventario.Instance.ObtenerCantidadDeItems(receta.Item1.ID) >= receta.Item1CantidadRequerida && Inventario.Instance.ObtenerCantidadDeItems(receta.Item2.ID) >= receta.Item2CantidadRequerida)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void Craftear()
+    {
+        for (int i = 0; i < RecetaSeleccionada.Item1CantidadRequerida; i++)
+        {
+            Inventario.Instance.ConsumirItem(RecetaSeleccionada.Item1.ID);
+        }
+
+        for (int i = 0; i < RecetaSeleccionada.Item2CantidadRequerida; i++)
+        {
+            Inventario.Instance.ConsumirItem(RecetaSeleccionada.Item2.ID);
+        }
+
+        Inventario.Instance.AniadirItem(RecetaSeleccionada.ItemResultado, RecetaSeleccionada.ItemResultadoCantidad);
+        MostrarReceta(RecetaSeleccionada);
     }
 }
