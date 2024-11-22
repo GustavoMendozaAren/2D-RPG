@@ -78,6 +78,11 @@ public class PlayerAnimations : MonoBehaviour
         {
             _animator.SetBool(derrotado, true);
         }
+        else
+        {
+            ActivarLayer(layerIdle);
+            _animator.SetBool(derrotado, true);
+        }
     }
 
     private void OnEnable()

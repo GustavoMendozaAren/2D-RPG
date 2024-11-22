@@ -17,6 +17,11 @@ public class AccionAtacarPersonaje : IAAccion
             return;
         }
 
+        if (controller.PerosnajeReferencia.GetComponent<PersonajeVida>().Derrotado)
+        {
+            return;
+        }
+
         if (controller.EsTiempoDeAtacar() == false)
         {
             return;

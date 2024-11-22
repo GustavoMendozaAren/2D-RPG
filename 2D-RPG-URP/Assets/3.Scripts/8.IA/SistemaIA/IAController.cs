@@ -47,7 +47,6 @@ public class IAController : MonoBehaviour
     public EnemigoMovimiento EnemigoMovimientoS { get; set; }
 
     public float RangoDeteccion => rangoDeteccion;
-
     public float Danio => danio;
     public TiposDeAtaque TipoAtaque => tipoAtaque;
     public float VelocidadMovimiento => velocidadMovimiento;
