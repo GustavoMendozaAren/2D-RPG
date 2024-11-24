@@ -67907,6 +67907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34c59de41a95321418216ca39696df10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventarioAlmacen: {fileID: 11400000, guid: abecf62c0c046a74fac065401bd3bbb4, type: 2}
   itemsInventario: []
   personaje: {fileID: 655028697}
   numeroDeSlots: 24

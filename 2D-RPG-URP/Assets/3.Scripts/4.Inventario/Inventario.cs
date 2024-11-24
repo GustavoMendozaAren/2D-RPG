@@ -1,10 +1,11 @@
-using System.Collections;
+using BayatGames.SaveGameFree;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventario : Sinlgeton<Inventario>
 {
     [Header("Items")]
+    [SerializeField] private InventarioAlmacen inventarioAlmacen;
     [SerializeField] private InventarioItem[] itemsInventario;
     [SerializeField] private Personaje personaje;
     [SerializeField] private int numeroDeSlots;
@@ -13,9 +14,13 @@ public class Inventario : Sinlgeton<Inventario>
     public int NumeroDeSlots => numeroDeSlots;
     public InventarioItem[] ItemsInventario => itemsInventario;
 
+    private readonly string INVENTARIO_KEY = "MiJuegoInventario";
+
     private void Start()
     {
         itemsInventario = new InventarioItem[numeroDeSlots];
+        //SaveGame.DeleteAll();
+        CargarInventario();
     }
 
     public void AniadirItem(InventarioItem itemPorAniadir, int cantidad) 
@@ -61,6 +66,8 @@ public class Inventario : Sinlgeton<Inventario>
         {
             AniadirItemEnSlotDisponible(itemPorAniadir, cantidad);
         }
+
+        GuardarInventario();
 
     }
 
@@ -131,6 +138,8 @@ public class Inventario : Sinlgeton<Inventario>
         {
             InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[index], itemsInventario[index].Cantidad, index);
         }
+
+        GuardarInventario();
     }
 
     public void MoverItem(int indexInicial, int indexFinal)
@@ -146,6 +155,8 @@ public class Inventario : Sinlgeton<Inventario>
         // Borramos Item de Slot inicial
         itemsInventario[indexInicial] = null;
         InventarioUI.Instance.DibujarItemEnInventario(null, 0, indexInicial);
+
+        GuardarInventario();
     }
 
     private void UsarItem(int index)
@@ -188,6 +199,71 @@ public class Inventario : Sinlgeton<Inventario>
 
         itemsInventario[index].RemoverItem();
     }
+
+    #region Guardado
+
+    private  InventarioItem ItemExisteEnAlmacen(string ID)
+    {
+        for (int i = 0; i < inventarioAlmacen.Items.Length; i++)
+        {
+            if (inventarioAlmacen.Items[i].ID == ID)
+            {
+                return inventarioAlmacen.Items[i];
+            }
+        }
+
+        return null;
+    }
+
+    private void GuardarInventario()
+    {
+        InventarioData dataGuardado = new InventarioData();
+        dataGuardado.ItemsDatos = new string[numeroDeSlots];
+        dataGuardado.ItemsCantidad = new int[numeroDeSlots];
+
+        for (int i = 0; i < numeroDeSlots; i++)
+        {
+            if (itemsInventario[i] == null || string.IsNullOrEmpty(itemsInventario[i].ID))
+            {
+                dataGuardado.ItemsDatos[i] = null;
+                dataGuardado.ItemsCantidad[i] = 0;
+            }
+            else
+            {
+                dataGuardado.ItemsDatos[i] = itemsInventario[i].ID;
+                dataGuardado.ItemsCantidad[i] = itemsInventario[i].Cantidad;
+            }
+        }
+
+        SaveGame.Save(INVENTARIO_KEY, dataGuardado);
+    }
+
+    private void CargarInventario()
+    {
+        if (SaveGame.Exists(INVENTARIO_KEY))
+        {
+            InventarioData dataCargado = SaveGame.Load<InventarioData>(INVENTARIO_KEY);
+            for (int i = 0; i < numeroDeSlots; i++)
+            {
+                if (dataCargado.ItemsDatos[i] != null)
+                {
+                    InventarioItem itemAlamcen = ItemExisteEnAlmacen(dataCargado.ItemsDatos[i]);
+                    if (itemAlamcen != null)
+                    {
+                        itemsInventario[i] = itemAlamcen.CopiarItem();
+                        itemsInventario[i].Cantidad = dataCargado.ItemsCantidad[i];
+                        InventarioUI.Instance.DibujarItemEnInventario(itemsInventario[i], itemsInventario[i].Cantidad, i);
+                    }
+                }
+                else
+                {
+                    itemsInventario[i] = null;
+                }
+            }
+        }
+    }
+
+    #endregion
 
     #region Eventos
 
